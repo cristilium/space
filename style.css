@@ -155,3 +155,7 @@ img {
         transform: scale(1);
     }
 }
+
+* {
+    cursor: url("images/cursor.png"), auto;
+}
