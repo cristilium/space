@@ -1,0 +1,157 @@
+@font-face {
+    font-family: "cute";
+    src: url("fonts/cute.ttf");
+}
+
+html, body {
+    overflow: hidden;
+    touch-action: none;
+    background-color: black;
+}
+
+.face-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: scale(2);
+    transform-origin: center center;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+        circle at center,
+        rgba(0,0,0,0) 40%,
+        rgba(0,0,0,1) 100%
+    );
+    z-index: 7;
+}
+
+.hair {
+    position: absolute;
+    z-index: 6;
+    transform: translateY(10px);
+}
+
+.blink-container {
+    position: absolute;
+    z-index: 5;
+    transform: translateY(-357px) translateX(97px);
+}
+
+.face-base {
+    position: absolute;
+    z-index: 4;
+}
+
+.eyeshine {
+    z-index: 3;
+    position: relative;
+    opacity: 1;
+    transform: translateX(120px) translateY(100px);
+    width: 90%;
+    height: 90%;
+}
+
+.pupil {
+    position: absolute;
+    z-index: 2;
+    transition: transform 0.1s ease-out;
+}
+
+.eyewhite {
+    z-index: 1;
+    position: absolute;
+    transition: transform 0.1s ease-out;
+    opacity: 1;
+}
+
+.blink-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.eyelid-open {
+    opacity: 1;
+}
+
+.eyelid-half {
+    opacity: 0.5;
+}
+
+.eyelid-closed {
+    opacity: 0;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+#overlay {
+    z-index: 9;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,1);
+    opacity: 1;
+}
+
+#overlay p {
+    font-size: 24px;
+    color: whitesmoke;
+    font-family: "cute";
+}
+
+@keyframes fade {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.lstrlogo {
+    position: fixed;
+    z-index: 8;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    pointer-events: none;
+}
+
+.lstrlogo a {
+    pointer-events: auto;
+}
+
+.lstrlogo img {
+    filter: drop-shadow(2px 6px 12px rgba(0, 0, 0, 1));
+}
+
+#content {
+    opacity: 0;
+    transform: scale(1.4);
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+        transform: scale(1.4);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
