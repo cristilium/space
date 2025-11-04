@@ -514,3 +514,15 @@ footer {
 .status-box p {
     margin-bottom: 4px;
 }
+
+.entry-content video {
+    display: block;
+    margin: 12px 0;
+    border: 1px dotted #00ff9f;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+}
+
+.entry-content video:hover {
+    box-shadow: 0 0 15px rgba(0, 255, 159, 0.3);
+}
